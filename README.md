@@ -7,12 +7,12 @@ This repo uses parcel to build a simple frontend using vanilla js + instantsearc
 
 1. Run meilisearch
 ```
-$ docker run -d -it --rm -p 7700:7700  -v $(pwd)/meili_data:/meili_data getmeili/meilisearch:v1.1
+docker run -d -it --rm -p 7700:7700  -v $(pwd)/meili_data:/meili_data getmeili/meilisearch:v1.1
 ```
 
 2. Index data
 ```
-$ curl -X POST 'http://localhost:7700/indexes/products/documents?primaryKey=sku' -H 'Content-Type: application/json' --data-binary @dataset/products.json
+curl -X POST 'http://localhost:7700/indexes/products/documents?primaryKey=sku' -H 'Content-Type: application/json' --data-binary @dataset/products.json
 ```
 
 3. Configure filterable / sortable fields (to facet and use in filters)
